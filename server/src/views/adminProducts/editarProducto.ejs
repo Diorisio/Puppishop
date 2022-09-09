@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include ('../partials/head') %>
+<body>
+    <%- include ('../partials/header') %>
+ 
+    <main id="main"  class="mainCrearProducto">
+        <section class="imagen-edit">
+            <img src="/images/productsDB/<%= toEdit.imagen %>" alt="">
+        </section>
+        <h1>Complete los datos del nuevo producto</h1>
+        <form  action="/editar-producto/<%= toEdit.id %>?_method=patch" id="formCrearProducto" method="POST" enctype="multipart/form-data" > <!-- enctype="multipart/form-data"> --> <!-- Usar esta config cuando se va a subir imagenes en el form sino se puede quitar el elemento o configurar  enctype="application/x-www-form-urlencoded"  para solo texto -->
+            
+            <div>
+                <label for="id_mascota">Perros</label>
+                <input type="radio" name="id_mascota" id="mascota" value="1" <% if(toEdit.id_mascota=="1") { %> checked <% }%> >
+                <label for="id_mascota">Gatos</label>
+                <input type="radio" name="id_mascota" id="mascota" value="2" <% if(toEdit.id_mascota=="2") { %> checked <% }%> >
+            </div>
+            <p class="errorForm" id="errorTipoMascota"></p>
+            <div>
+                <label for="razas">Pequeña</label>
+                <input type="radio" name="raza" id="raza" value="pequeña" <% if(toEdit.raza=="pequeña") { %> checked <% }%>>
+                <label for="mascota">Mediana</label>
+                <input type="radio" name="raza" id="raza" value="mediana" <% if(toEdit.raza=="mediana") { %> checked <% }%>>
+                <label for="mascota">Grande</label>
+                <input type="radio" name="raza" id="raza" value="grande" <% if(toEdit.raza=="grande") { %> checked <% }%>>
+            </div>
+            <p class="errorForm" id="errorTamañoMascota"></p>
+
+            <div>
+                <label for="categoria">Categoria</label>
+                <select name="categoria" id="categoria">
+                <option value="accesorios" <% if(toEdit.categoria=="accesorios") { %> selected <% }%>>Accesorios</option>
+                <option value="alimentos" <% if(toEdit.categoria=="alimentos") { %> selected <% }%>>Alimentos</option>
+                <option value="aseo" <% if(toEdit.categoria=="aseo") { %> selected <% }%>>Aseo</option>
+                </select>
+            </div>
+            <p class="errorForm" id="errorCategoriaProductos"></p>
+
+            <div>
+                <label for="id_marca">Marca</label>
+                <select name="id_marca" required>
+                    <option value="" disabled selected> Seleccionar marca </option>
+                    <% marca.forEach(marca => { %>
+                    <option value="<%= marca.id %>" <% if (toEdit.marca.id==marca.id){ %><%= 'selected'%><%}%> ><%= marca.nombre_marca %></option>
+                    <% })%> 
+                
+                </select>
+                
+            </div>
+            <p class="errorForm" id="errorMarca"></p>
+
+            <div>
+                <label for="cantidad">Cantidad disponible</label>
+                <input type="number" id="cantidad" name="cantidad" value="<%= toEdit.cantidad %>" >
+            </div>
+            <p class="errorForm" id="errorCantidad"></p>
+
+            <div>
+                <label for="precio">Precio</label>
+                <input type="number" id="precio" name="precio" value="<%= toEdit.precio %>" >
+            </div>
+            <p class="errorForm" id="errorPrecio"></p>
+
+            <div>
+                <label for="tamanio">Tamaño en Kg</label>
+                <input type="number" id="tamaño" name="tamanio" value="<%= toEdit.tamanio %>" >
+            </div>
+            <p class="errorForm" id="errorTamaño"></p>
+
+            <div>
+                <label for="imagen">Imagen de descripción</label>
+                <input type="file" name="imagen" placeholder="Ingrese imagen de referencia" value="<%= toEdit.imagen %>" accept=".jpg,.jpeg,.png">
+            </div>
+            <div >
+                <button type="submit">Guardar</button>
+            </div>
+
+            
+            
+        </form>
+    </main>
+
+    <script src="../../js/editarProducto.js"></script>
+    <%- include ('../partials/footer') %>
+</body>
+</html>

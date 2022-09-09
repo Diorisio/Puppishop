@@ -1,0 +1,88 @@
+
+
+.detalleProducto{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 5px;
+}
+
+.detalleProducto .imagenDetalle{
+    width:30%;
+    display: flex;
+    align-items: center;
+    
+}
+.detalleProducto .imagenDetalle img{
+    width: 100%;
+}
+
+.detalleProducto .descripcionDetalle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-left: 1px solid #7ca04f;
+    width: 50%;
+    
+}
+.detalleProducto .descripcionDetalle .formCompra{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 25px;
+    gap: 10px;
+    background-color:var(--verdeOpaco);
+    
+    border-radius:10px;
+    padding: 10px;
+    
+    
+    
+}
+.detalleProducto .descripcionDetalle .formCompra label, h2{
+font-family: var(--fuente);
+font-size: var(--font-size-XXL);
+font-weight: 100;
+    
+}
+.detalleProducto .descripcionDetalle .formCompra label, h3{
+    font-family: var(--fuente);
+    font-size: var(--font-size-L);
+    font-weight: 100;
+        
+    }
+.detalleProducto .descripcionDetalle .formCompra .listas{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin-top: 10px;
+    align-items: center;
+}
+.detalleProducto .descripcionDetalle .formCompra .listas select{
+color: #7ca04f;
+font-size: var(--font-size-XL);
+}
+
+.detalleProducto .descripcionDetalle .formCompra input{
+       
+    padding: 3px;
+    font-family: var(--fuente);
+    font-size: var(--font-size-XL);
+    background-color: var(--verde);
+    color:aliceblue ;
+    border-radius: 10px;
+    transition-property: background-color, color;
+    transition-duration: 500ms;
+    
+}
+.detalleProducto .descripcionDetalle .formCompra input:hover{
+ 
+    color: var(--verde);
+    background-color:aliceblue;
+}
+
+.botones {
+    display: flex;
+    flex-direction: column;
+}

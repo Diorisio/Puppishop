@@ -1,0 +1,41 @@
+main .top .left .img2{
+  transition-property: border;
+  transition-duration: 500ms;
+
+}/* Contenedor imagen principal */
+main .top .left .img2:hover{
+  border:3px solid #7ca04f ;
+
+}/* Contenedor imagen principal */
+
+main .top .right .range input{
+
+  transition-property: background-color;
+ }/* Contenedor btn listado */
+
+main .top .right .range input:hover{
+ background-color: #7ca04f;
+ transition-property: background-color;
+ transition-duration: 500ms;
+}/* Contenedor btn listado */
+
+main .top .right button{
+  transition-property: background-color;
+   transition-duration: 500ms;
+ }/* Contenedor listado */
+ 
+main .top .right button:hover{
+  background-color: #7ca04f;
+  transition-property: background-color;
+ }/* Contenedor listado */
+
+
+ main .botton article{
+  transition-property: border;
+  transition-duration: 500ms;
+ }
+
+ main .botton article:hover{
+  border:3px solid #7ca04f ;
+
+ }

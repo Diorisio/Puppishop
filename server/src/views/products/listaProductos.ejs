@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include ('../partials/head') %>
+<body>
+    <%- include ('../partials/header') %>
+    
+    <main id="main"  class="mainListaProductos">
+        <%producto.forEach(item=>{ %>
+            <article>
+                <img src="/images/productsDB/<%= item.imagen %>" alt="">
+                <div class="vermas">
+                    <div class="descripcionMas">
+                        <p>Tipo: <%= item.mascota.tipo_mascota %></p>
+                        <p>Razas: <%= item.raza %></p>
+                        <p>Descripcion: <%= item.categoria %></p>
+                        <p>Tamanio: <%= item.tamanio %> kg</p>
+                        <p>Precio: $<%= item.precio %></p>
+                    </div>
+                    
+
+                    <button><a href="/detalle/<%= item.id %>">DETALLES</a></button>
+                    
+                </div>
+                
+            </article>
+       <% }) %>
+        
+
+    </main>
+    <%- include ('../partials/footer') %>
+</body>
+</html>

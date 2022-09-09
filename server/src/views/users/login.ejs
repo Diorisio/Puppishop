@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include ('../partials/head') %>
+<body>
+    <%- include ('../partials/header') %>
+    <main id="main"  class="registro">
+        <!-- imagen de sin foto -->
+        <div class="iconoUser">
+            <i class="far fa-user"></i>
+        </div>
+        <!-- formulario de login -->
+        <form action="/user/login" id="logForm" method="POST">  
+            <label for="correo">Ingrese Correo electrónico</label>
+            <input type="email" name="correo" id="logCorreo" placeholder="Correo" value="<%= locals.old && old.correo ? old.correo : '' %>" >
+            <p class="errorForm" id="errorLogCorreo"></p>
+            <% if (locals.errors && errors.correo) { %>
+                <p class="errorForm" id="showError" ><%= errors.correo.msg %></p>
+                <% }; %>
+            <label for="contraseña">Ingrese Contraseña</label>
+            <input type="password" id="logPassword" name="contraseña" placeholder="Contraseña">
+            <p class="errorForm" id="errorLogPassword"></p>
+            <% if (locals.errors && errors.contraseña) { %>
+                <p class="errorForm" id="showError" ><%= errors.contraseña.msg %></p>
+                <% }; %>
+            <label for="recordame">Recordame</label>
+            <input type="checkbox" name="recordame"  checked>
+
+            <div class="botones">
+                <input class="btn" type="submit" value="Ingresar">
+                <input class="btn" type="reset" value="Borrar">
+            </div>
+        </form>
+        <label for="enlaceCreaUser">¿No tienes Cuenta?</label>
+        <a href="/user/registro"><button class="btn" name="enlaceCreaUser">Crear Usuario</button></a>
+            
+    </main>
+    <script src="../../js/loginUser.js"></script>
+    <%- include ('../partials/footer') %>
+</body>
+</html>

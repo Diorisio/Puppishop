@@ -1,0 +1,47 @@
+<header>
+    <div class="caja-logo">
+        <a href="/"><img src="/images/LOGOB.png"  alt="Logo PuppieShop"></a>              
+                           
+    </div><!-- contenedor logo -->
+    <div class="header-right">
+        <div class="redes">
+            <div class="iconred">
+                <a href="https://www.google.com/" target="blank"><i class="fab fa-instagram"></i> 
+                
+            </div>
+            <div class="iconred">
+                <a href="https://www.google.com/" target="blank"><i class="fab fa-facebook-f"></i>
+                
+            </div>
+            <div class="iconred">
+                <a href="https://www.google.com/" target="blank"><i class="fab fa-whatsapp"></i>
+            </div>
+
+
+        </div><!-- Contenedor Redes Sociales -->
+
+        <div class="caja-enlace-header">
+            <div class="div-btn-header">
+                <a class="a-btn-header" href="/comida">Productos</a>
+            </div><!-- div link productos -->
+            <div class="div-btn-header">
+                <a class="a-btn-header" href="#">Contactanos</a>
+            </div><!-- div link contactenos -->
+            <% if (!locals.logueado) { %>
+                <div class="iconred">
+                    <a href="/user/login"><i class="fa-solid fa-user"></i>
+                </div><!-- div link login -->
+
+            <% }else{ %>
+                <div class="imgUser">
+                    <a href="/user/login"><img src="/images/dbUsers/<%= locals.usuarioLogueado.imagen %>" alt="">
+                </div>
+                
+                
+            <% }; %>
+            <div class="iconred">
+                <a href="/carrito"><i class="fas fa-shopping-cart"></i></a>
+            </div><!-- div link login -->
+        </div><!-- Contenedor enlaces header -->
+    </div><!-- Contenedor derecho de header -->
+</header>
